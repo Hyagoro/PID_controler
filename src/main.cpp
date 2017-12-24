@@ -1,8 +1,6 @@
 #include <uWS/uWS.h>
-#include <iostream>
 #include "json.hpp"
 #include "PID.h"
-#include <math.h>
 
 // for convenience
 using json = nlohmann::json;
@@ -19,8 +17,8 @@ double rad2deg(double x) { return x * 180 / pi(); }
 // else the empty string "" will be returned.
 std::string hasData(std::string s) {
     auto found_null = s.find("null");
-    auto b1 = s.find_first_of("[");
-    auto b2 = s.find_last_of("]");
+    auto b1 = s.find_first_of('[');
+    auto b2 = s.find_last_of(']');
     if (found_null != std::string::npos) {
         return "";
     } else if (b1 != std::string::npos && b2 != std::string::npos) {
@@ -43,7 +41,7 @@ int main() {
         // The 2 signifies a websocket event
         if (length && length > 2 && data[0] == '4' && data[1] == '2') {
             auto s = hasData(std::string(data).substr(0, length));
-            if (s != "") {
+            if (!s.empty()) {
                 auto j = json::parse(s);
                 std::string event = j[0].get<std::string>();
                 if (event == "telemetry") {
