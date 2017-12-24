@@ -10,9 +10,9 @@ using std::vector;
 * TODO: Complete the PID class.
 */
 
-PID::PID() {}
+PID::PID() = default;
 
-PID::~PID() {}
+PID::~PID() = default;
 
 void PID::Init(double Kp, double Ki, double Kd) {
 
@@ -58,7 +58,7 @@ void PID::UpdateError(double cte) {
                 choice = {false, false};
                 index = (index + 1) % 3;
             }
-                // try a new param
+                // try choice 0
             else if (!choice[0] && !choice[1]) {
 
                 choice[0] = true;
