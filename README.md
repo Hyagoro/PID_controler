@@ -37,4 +37,4 @@ Implementation of a PID controller in C++
 
 #### Choose the right parameters
 
-I tried to program  the twiddle algorithm to fine tune the parameter, but it didn't work well. So, I finally tune the parameters manually by adding or substracting 1 to `P` and `D` regarding the `CTE` values.
+I tried to program  the twiddle algorithm to fine tune the parameter, but it didn't work well. So, I finally tune the parameters manually by adding or substracting 0.05 for to `P` and 0.5 for `D` regarding the `CTE` values.
