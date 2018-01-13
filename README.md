@@ -30,10 +30,13 @@ Implementation of a PID controller in C++
 #### Effect of the P, I, D component of the PID algorithm
 
 - Componenent **P** (**P**roportional): This component is used to steer the car to the center line. The problem of using this parameter alone is to overshoot the line and potentialy leave the road. 
+[Video Example](https://www.youtube.com/watch?v=sw2Q0kSc9IQ)
 
 - Component **I** (**I**ntegral): This component is used to remove a potential bias induced by the front wheels, if they are not well aligned for example. This problem is called systematic bias. In our case, the car on the similator doesn't have any bias. Used alone, the car is goes in circle.
+[Video Example](https://www.youtube.com/watch?v=i-WsXaWw5Nc)
 
-- Component **D*** (**D**ifferencial): This component is used to compensate the P parameter. It helps to do a smoother approach the the center line.
+- Component **D** (**D**ifferencial): This component is used to compensate the P parameter. It helps to do a smoother approach the the center line.
+[Video Example](https://www.youtube.com/watch?v=5LfCm6jDek8)
 
 #### Choose the right parameters
 
